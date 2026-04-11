@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk , JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar/Navbar";
@@ -8,6 +8,11 @@ import MainLayout from "@/components/Layout/MainLayout";
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
+});
+
+const jetBrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jet-brains",
 });
 
 const inter = Inter({
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full antialiased font-sans", inter.variable, spaceGrotesk.variable)}
+      className={cn("h-full antialiased font-sans", inter.variable, spaceGrotesk.variable , jetBrains.variable)}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />

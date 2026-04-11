@@ -68,6 +68,7 @@
   --text-h5: 1.25rem; /* 20px */
   --text-h6: 1.125rem; /* 18px */
   --text-body: 1rem; /* 16px */
+  --text-display-d1: 10rem; /* 160px */
   --text-display-h1: 4.5rem; /* 72px */
   --text-display-h2: 3.75rem; /* 60px */
   --text-large-p: 1.25rem; /* 20px */
@@ -78,6 +79,7 @@
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-space-grotesk), ui-sans-serif, sans-serif;
+  --font-terminal: var(--font-jet-brains), ui-sans-serif, sans-serif;
 
   --color-primary: #f9f9fd;
   --color-secondary: #aaabaf;
@@ -241,6 +243,12 @@
     font-weight: 400;
     line-height: 1.5;
   }
+  .display-d1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-display-d1);
+    font-weight: 800;
+    line-height: 1.05;
+  }
   .display-h1 {
     font-family: var(--font-heading);
     font-size: var(--text-display-h1);
@@ -277,5 +285,37 @@
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
+  }
+
+}
+
+@layer components {
+  .text-gradient {
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-900),
+      var(--color-secondary-900),
+      var(--color-primary-900) 
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientMove 4s ease-in infinite;
+  }
+
+  .animate-blink {
+    animation: blink 1s steps(1, end) infinite;
+  }
+
+  @keyframes blink {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes gradientMove {
+    0%   { background-position: 200% center; }
+    100% { background-position: 0% center; }
   }
 }

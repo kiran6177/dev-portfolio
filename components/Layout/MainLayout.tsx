@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const variants = {
-  large: "max-w-[1200px] mx-auto",
+  large: "max-w-[1280px] mx-auto",
   medium: "max-w-[1024px] mx-auto",
   small: "max-w-[768px] mx-auto",
 } as const;
@@ -14,7 +14,7 @@ type MainLayoutProps = {
 };
 
 function MainLayout({ children, variant }: MainLayoutProps) {
-  return <main className={cn("w-full", variants[variant || "large"])}>{children}</main>;
+  return <main className={cn("w-full pt-40", variants[variant || "large"])}>{children}</main>;
 }
 
 export default MainLayout;
