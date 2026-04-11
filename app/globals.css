@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+/*
+ * Tokens: Tailwind (e.g. bg-primary-900, text-primary) or var(--color-…)
+ * Canvas colors from your spec map to surface-* (avoids clashing with accent primary-900).
+ */
+:root {
+  /* Accent */
+  --color-primary-900: #00E3FD;
+  --color-primary-800: #81ecff;
+  --color-secondary-900: #c180ff;
+  --color-tertiary-900: #9bffce;  
+  --color-neutral-900: #121417;
+
+  /* Typography (utilities: text-primary, text-secondary) */
+  --color-primary: #f9f9fd;
+  --color-secondary: #aaabaf;
+  --color-tertiary: #94A3B8;
+  --color-black-accent: #004D57;
+
+  /* Surfaces (= your bg-primary-900, bg-secondary-900, …) */
+  --color-background-900: #0c0e11;
+  --color-background-800: #0F172A;
+  --color-background-700: #23262a;
+  --color-background-600: #171a1d;
+  --color-background-500: #111417;
+
+  --color-border-900: #46484b;
+  --color-border-800: #334155;
+
+  --color-red-900: #d7383b;
+  --color-green-900: #58e7ab;
+  --color-blue-900: #00d4ec;
+
+  /* Spacing (any element: margin: var(--space-4); or p-4 / gap-section) */
+  --space-0: 0;
+  --space-px: 1px;
+  --space-0-5: 0.125rem;
+  --space-1: 0.25rem;
+  --space-1-5: 0.375rem;
+  --space-2: 0.5rem;
+  --space-2-5: 0.625rem;
+  --space-3: 0.75rem;
+  --space-3-5: 0.875rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-9: 2.25rem;
+  --space-10: 2.5rem;
+  --space-11: 2.75rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-component: var(--space-4);
+  --space-section: var(--space-16);
+  --space-page: var(--space-8);
+
+  /* Type scale (16px root → rem) */
+  --text-h1: 2.25rem; /* 36px */
+  --text-h2: 2rem; /* 32px */
+  --text-h3: 1.75rem; /* 28px */
+  --text-h4: 1.5rem; /* 24px */
+  --text-h5: 1.25rem; /* 20px */
+  --text-h6: 1.125rem; /* 18px */
+  --text-body: 1rem; /* 16px */
+  --text-display-h1: 4.5rem; /* 72px */
+  --text-display-h2: 3.75rem; /* 60px */
+  --text-large-p: 1.25rem; /* 20px */
+  --text-small-p: 0.875rem; /* 14px */
+
+}
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), ui-sans-serif, sans-serif;
+
+  --color-primary: #f9f9fd;
+  --color-secondary: #aaabaf;
+  --color-tertiary: #94A3B8;
+  --color-black-accent: #004D57;
+
+  --color-primary-900: #00E3FD;
+  --color-primary-800: #81ecff;
+  --color-secondary-900: #c180ff;
+  --color-tertiary-900: #9bffce;
+  --color-neutral-900: #121417;
+
+  --color-background-900: #0c0e11;
+  --color-background-800: #0F172A;
+  --color-background-700: #23262a;
+  --color-background-600: #171a1d;
+  --color-background-500: #111417;
+  
+  --color-border-900: #46484b;
+  --color-border-800: #334155;
+
+
+
+  --color-red-900: #d7383b;
+  --color-green-900: #58e7ab;
+  --color-blue-900: #00d4ec;
+
+  --spacing-px: var(--space-px);
+  --spacing-0-5: var(--space-0-5);
+  --spacing-1-5: var(--space-1-5);
+  --spacing-2-5: var(--space-2-5);
+  --spacing-3-5: var(--space-3-5);
+  --spacing-component: var(--space-component);
+  --spacing-section: var(--space-section);
+  --spacing-page: var(--space-page);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--color-background-900);
+    color: var(--color-primary);
+  }
+
+  h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h1);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h4);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  h5 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h5);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  h6 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h6);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  p {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  span {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  h1 span,
+  h2 span,
+  h3 span,
+  h4 span,
+  h5 span,
+  h6 span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
+
+  button {
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  .text-h1 {
+    font-size: var(--text-h1);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .text-h2 {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .text-h3 {
+    font-size: var(--text-h3);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .text-h4 {
+    font-size: var(--text-h4);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .text-h5 {
+    font-size: var(--text-h5);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .text-h6 {
+    font-size: var(--text-h6);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .text-body {
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .display-h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-display-h1);
+    font-weight: 800;
+    line-height: 1.05;
+  }
+
+  .display-h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-display-h2);
+    font-weight: 800;
+    line-height: 1.08;
+  }
+
+  .large-p {
+    font-family: var(--font-sans);
+    font-size: var(--text-large-p);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .small-p {
+    font-family: var(--font-sans);
+    font-size: var(--text-small-p);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .display-h1 span,
+  .display-h2 span,
+  .large-p span,
+  .small-p span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+}
