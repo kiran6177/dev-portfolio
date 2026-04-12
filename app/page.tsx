@@ -1,12 +1,17 @@
+import Collaborate from "@/components/Contact/Collaborate";
+import SectionLayout from "@/components/Layout/SectionLayout";
+import PipelineMain from "@/components/Pipeline/PipelineMain";
+import SkillCarousel from "@/components/SkillCarousel/SkillCarousel";
 import CommandStart from "@/components/Terminal/CommandStart";
 import Terminal from "@/components/Terminal/Terminal";
+import TerminalCard from "@/components/Terminal/TerminalCard";
+import LinkComponent from "@/components/ui/Link/Link";
+import { CircleArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
     <div>
-      <section className="relative">
-        <p className="display-d1 text-secondary-900 opacity-5 absolute -top-10 -left-12">01</p>
-        <p className="font-terminal text-secondary-900 mb-6">01 IDENTITY</p>
+      <SectionLayout count="01" title="IDENTITY">
         <div className="grid grid-cols-2 gap-20">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
@@ -29,32 +34,61 @@ export default function Home() {
                   <CommandStart /> <p className="font-terminal">whoami</p>
                 </div>
                 <p className="font-terminal text-tertiary-900">
-                  <span className="text-primary font-terminal">name:</span> 'Kiran'
+                  <span className="text-primary font-terminal">name:</span> {`'Kiran'`}
                 </p>
                 <p className="font-terminal text-tertiary-900">
-                  <span className="text-primary font-terminal">role:</span> 'Full Stack Engineer'
+                  <span className="text-primary font-terminal">role:</span>{" "}
+                  {`'Full Stack Engineer'`}
                 </p>
                 <p className="font-terminal text-secondary-900">
                   <span className="text-primary font-terminal">experience:</span> 2.5{" "}
-                  <span className="text-secondary/60 font-terminal">// years</span>
+                  <span className="text-secondary/60 font-terminal">{`// years`}</span>
                 </p>
                 <p className="font-terminal text-tertiary-900">
-                  <span className="text-primary font-terminal">location:</span> 'Kochi, Kerala,
-                  India'
+                  <span className="text-primary font-terminal">location:</span>{" "}
+                  {`'Kochi, Kerala, India'`}
                 </p>
                 <p className="font-terminal text-tertiary-900">
                   <span className="text-primary font-terminal">skills:</span>
-                  <span className="text-primary-900"> [</span>'JavaScript', 'Node' , 'React',
-                  'MongoDB',...+10<span className="text-primary-900">]</span>
+                  <span className="text-primary-900"> [</span>
+                  {`'JavaScript', 'Node' , 'React',
+                  'MongoDB',...+10`}
+                  <span className="text-primary-900">]</span>
                 </p>
                 <p className="font-terminal text-tertiary-900">
-                  <span className="text-primary font-terminal">status:</span> 'Available_for_build'
+                  <span className="text-primary font-terminal">status:</span>{" "}
+                  {`'Available_for_build'`}
                 </p>
               </div>
             </Terminal>
           </div>
         </div>
-      </section>
+      </SectionLayout>
+      <SectionLayout count="02" title="SYSTEMS" className="my-20">
+        <LinkComponent
+          href="/projects"
+          variant="terminal"
+          className="absolute top-0 right-0 flex gap-2 items-center"
+        >
+          EXPLORE CORE
+          <CircleArrowRight />
+        </LinkComponent>
+        <h2 className="mb-4">RECENT SYSTEMS </h2>
+        <div className="grid grid-cols-3 gap-6">
+          <TerminalCard />
+          <TerminalCard />
+          <TerminalCard />
+        </div>
+      </SectionLayout>
+      <SectionLayout count="03" title="ENGINE" className="my-20 ">
+        <h2 className="mb-4">RUNTIME</h2>
+        <SkillCarousel />
+      </SectionLayout>
+      <SectionLayout count="04" title="PIPELINE" className="my-20 ">
+        <h2 className="mb-4">BUILD PIPELINE</h2>
+        <PipelineMain />
+      </SectionLayout>
+      <Collaborate />
     </div>
   );
 }

@@ -73,6 +73,8 @@
   --text-display-h2: 3.75rem; /* 60px */
   --text-large-p: 1.25rem; /* 20px */
   --text-small-p: 0.875rem; /* 14px */
+  --text-xsmall-p: 0.75rem; /* 10px */
+
 
 }
 
@@ -277,6 +279,13 @@
     line-height: 1.5;
   }
 
+  .xsmall-p {
+    font-family: var(--font-sans);
+    font-size: var(--text-xsmall-p);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
   .display-h1 span,
   .display-h2 span,
   .large-p span,
@@ -295,7 +304,7 @@
       to right,
       var(--color-primary-900),
       var(--color-secondary-900),
-      var(--color-primary-900) 
+      var(--color-primary-900)
     );
     background-size: 200% auto;
     background-clip: text;
@@ -304,8 +313,36 @@
     animation: gradientMove 4s ease-in infinite;
   }
 
+  .bg-gradient-animated {
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-900),
+      var(--color-secondary-900),
+      var(--color-primary-900)
+    );
+    background-size: 200% auto;
+    animation: gradientMove 4s ease-in infinite;
+  }
+
   .animate-blink {
     animation: blink 1s steps(1, end) infinite;
+  }
+
+  .animate-infinite-scroll {
+    animation: infinite-scroll 20s linear infinite;
+  }
+
+  .pause-on-hover:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   @keyframes blink {
