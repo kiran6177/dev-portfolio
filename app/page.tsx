@@ -6,6 +6,7 @@ import CommandStart from "@/components/Terminal/CommandStart";
 import Terminal from "@/components/Terminal/Terminal";
 import TerminalCard from "@/components/Terminal/TerminalCard";
 import LinkComponent from "@/components/ui/Link/Link";
+import { projects } from "@/lib/constants/projects.config";
 import { CircleArrowRight } from "lucide-react";
 
 export default function Home() {
@@ -75,9 +76,11 @@ export default function Home() {
         </LinkComponent>
         <h2 className="mb-4">RECENT SYSTEMS </h2>
         <div className="grid grid-cols-3 gap-6">
-          <TerminalCard />
-          <TerminalCard />
-          <TerminalCard />
+          {
+            projects.slice(0, 3).map((project) => (
+              <TerminalCard key={project.id} project={project} />
+            ))
+          }
         </div>
       </SectionLayout>
       <SectionLayout count="03" title="ENGINE" className="my-20 ">
