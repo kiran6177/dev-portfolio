@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 function Collaborate() {
   const router = useRouter();
   const handleNavigate = () => {
-    console.log("clicked");
     router.push("/contact");
   };
   return (

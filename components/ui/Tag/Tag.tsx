@@ -18,6 +18,10 @@ const variants = {
     bg: "border-2 border-red-900/40 bg-red-900/10 text-red-900",
     border: "bg-red-900",
   },
+  standard: {
+    bg: "border-2 border-border-900/40 bg-border-900/10 text-secondary",
+    border: "bg-border-900",
+  },
 } as const;
 
 type TagProps = React.HTMLAttributes<HTMLDivElement> & {
