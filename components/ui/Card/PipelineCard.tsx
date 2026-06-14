@@ -23,7 +23,7 @@ function PipelineCard({ skill, icon, variant = "primary", className }: PipelineC
   return (
       <div
         className={cn(
-          "flex flex-col border-2 gap-2 p-4 rounded-xl w-fit min-w-48",
+          "flex flex-col  border-2 gap-2 p-4 rounded-xl w-fit min-w-48",
           className,
           variants[variant]
         )}

@@ -18,7 +18,7 @@ export default function Projects() {
           </p>
         </div>
       </div>
-      <section className="grid gap-6 lg:grid-cols-3 my-20">
+      <section className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-20">
         {projects.map((project) => (
           <TerminalCard key={project.id} project={project} />
         ))}

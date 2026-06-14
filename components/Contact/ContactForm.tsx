@@ -80,9 +80,6 @@ function ContactForm() {
   return (
     <TerminalCard>
       <form className="flex flex-col gap-4 p-6 relative " onSubmit={handleSubmit}>
-        <div>
-          <span className="font-terminal! text-secondary small-p inline-block mr-6">1</span>
-        </div>
         <p className="font-terminal">{`{`}</p>
         <p className="font-terminal">
           <span className="font-terminal text-primary-900">sender_identity</span>":

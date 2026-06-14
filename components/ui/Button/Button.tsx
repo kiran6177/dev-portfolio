@@ -11,20 +11,48 @@ const variants = {
 
 type Variant = keyof typeof variants;
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonCommonProps = {
   variant?: Variant;
+  href?: string;
+  external?: boolean;
+  className?: string;
+  children?: React.ReactNode;
 };
 
-function Button({ children, variant = "primary", className, ...props }: ButtonProps) {
+type ButtonProps = ButtonCommonProps &
+  (React.ButtonHTMLAttributes<HTMLButtonElement> | React.AnchorHTMLAttributes<HTMLAnchorElement>);
+
+function Button({
+  children,
+  variant = "primary",
+  className,
+  href,
+  external,
+  ...props
+}: ButtonProps) {
+  const classNames = cn(
+    "h-11 rounded-xl cursor-pointer flex items-center justify-center px-4 font-medium font-heading",
+    variants[variant],
+    className
+  );
+
+  if (href) {
+    const { type, ...anchorProps } = props as React.AnchorHTMLAttributes<HTMLAnchorElement>;
+    return (
+      <a
+        className={classNames}
+        href={href}
+        target={external ? "_blank" : "_self"}
+        rel={external ? "noopener noreferrer" : undefined}
+        {...anchorProps}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <button
-      className={cn(
-        "h-11 rounded-xl cursor-pointer flex items-center justify-center px-4 font-medium font-heading",
-        variants[variant],
-        className
-      )}
-      {...props}
-    >
+    <button className={classNames} {...(props as React.ButtonHTMLAttributes<HTMLButtonElement>)}>
       {children}
       {variant === "terminal" && (
         <span className="ml-1 inline-block bg-secondary-900 h-6 w-1.5 animate-blink"></span>

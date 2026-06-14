@@ -336,6 +336,12 @@
     animation-play-state: paused;
   }
 
+  @media (max-width:768px) {
+    html {
+      font-size: 0.875rem; /* 14px */
+    }
+  }
+
   @keyframes infinite-scroll {
     0% {
       transform: translateX(0);

@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full antialiased font-sans", inter.variable, spaceGrotesk.variable , jetBrains.variable)}
+      className={cn("min-h-full min-w-screen antialiased font-sans", inter.variable, spaceGrotesk.variable , jetBrains.variable)}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />

@@ -5,15 +5,17 @@ import Tag from "../ui/Tag/Tag";
 import LinkComponent from "../ui/Link/Link";
 import { CircleArrowRight } from "lucide-react";
 import { Project } from "@/lib/types/common.types";
+import { cn } from "@/lib/utils";
 
 type TerminalCardProps = {
   project?: Project;
   children?: ReactNode;
+  classname?: string;
 };
 
-function TerminalCard({ project, children }: TerminalCardProps) {
+function TerminalCard({ project, classname, children }: TerminalCardProps) {
   return (
-    <TerminalLayout className={"group"} rounded={false}>
+    <TerminalLayout className={cn("group", classname)} rounded={false}>
       {children ? (
         children
       ) : project ? (

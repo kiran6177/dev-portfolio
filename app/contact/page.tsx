@@ -12,7 +12,7 @@ export default function Contact() {
             your request to the central processing unit.
           </p>
         </div>
-        <div className="w-[70%]"> 
+        <div className="w-full lg:w-[70%] my-20"> 
         <ContactForm />
         </div>
       </div>

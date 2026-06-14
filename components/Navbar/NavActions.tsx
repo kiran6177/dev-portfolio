@@ -7,13 +7,27 @@ import { GITHUB_URL, LINKEDIN_URL } from "@/lib/constants/socialLinks";
 function NavActions() {
   return (
     <div className="flex gap-8 items-center">
-      <LinkComponent external href={LINKEDIN_URL}>
+      <LinkComponent
+        external
+        href={LINKEDIN_URL}
+        className="max-[520px]:hidden"
+      >
         <LinkedinIcon size={20} />
       </LinkComponent>
-      <LinkComponent external href={GITHUB_URL}>
+      <LinkComponent
+        external
+        href={GITHUB_URL}
+        className="max-[520px]:hidden"
+      >
         <GithubIcon size={20} />
       </LinkComponent>
-      <Button variant="gradient">RESUME</Button>
+      <Button
+        variant="gradient"
+        href="/assets/resume/Kiran_Biju_P___Full_Stack_Developer.pdf"
+        external
+      >
+        RESUME
+      </Button>
     </div>
   );
 }

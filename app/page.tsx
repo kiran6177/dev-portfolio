@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <SectionLayout count="01" title="IDENTITY">
-        <div className="grid grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2">
               <h2 className="display-h2">Engineering </h2>
@@ -69,13 +69,13 @@ export default function Home() {
         <LinkComponent
           href="/projects"
           variant="terminal"
-          className="absolute top-0 right-0 flex gap-2 items-center"
+          className="absolute top-0 right-8 flex gap-2 items-center"
         >
           EXPLORE CORE
           <CircleArrowRight />
         </LinkComponent>
         <h2 className="mb-4">RECENT SYSTEMS </h2>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {
             projects.slice(0, 3).map((project) => (
               <TerminalCard key={project.id} project={project} />

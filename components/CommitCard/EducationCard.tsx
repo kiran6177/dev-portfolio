@@ -15,7 +15,7 @@ function EducationCard({ content }: EducationCardProps) {
   return (
     <div className="relative">
       {/* Vertical timeline line */}
-      <div className="absolute left-2.5 top-4 bottom-0 w-0.5 bg-linear-to-b from-border-900 to-border-900/30 h-[calc(100%-10rem)]"></div>
+      <div className="hidden sm:absolute left-2.5 top-4 bottom-0 w-0.5 bg-linear-to-b from-border-900 to-border-900/30 h-[calc(100%-10rem)]"></div>
 
       {/* Experience cards with timeline dots */}
       <div className="space-y-8">
@@ -23,10 +23,10 @@ function EducationCard({ content }: EducationCardProps) {
           const colorClass = colorVariants[index % colorVariants.length];
 
           return (
-            <div key={education.id} className="relative pl-16">
+            <div key={education.id} className="relative sm:pl-16">
               {/* Timeline dot */}
               <div
-                className={`absolute left-1.5 top-2 inline-flex h-6 w-6 -translate-x-1.5 rounded-full ${colorClass} ring-1 border-background-900 border-4 `}
+                className={`hidden sm:absolute left-1.5 top-2 sm:inline-flex h-6 w-6 -translate-x-1.5 rounded-full ${colorClass} ring-1 border-background-900 border-4 `}
               ></div>
 
               {/* Commit card */}
