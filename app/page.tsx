@@ -87,10 +87,10 @@ export default function Home() {
         <h2 className="mb-4">RUNTIME</h2>
         <SkillCarousel />
       </SectionLayout>
-      <SectionLayout count="04" title="PIPELINE" className="my-20 ">
+      {/* <SectionLayout count="04" title="PIPELINE" className="my-20 ">
         <h2 className="mb-4">BUILD PIPELINE</h2>
         <PipelineMain />
-      </SectionLayout>
+      </SectionLayout> */}
       <Collaborate />
     </div>
   );
