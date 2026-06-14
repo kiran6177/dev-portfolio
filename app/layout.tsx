@@ -36,7 +36,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "min-h-full min-w-screen antialiased font-sans",
+        "min-h-full antialiased font-sans",
         inter.variable,
         spaceGrotesk.variable,
         jetBrains.variable
